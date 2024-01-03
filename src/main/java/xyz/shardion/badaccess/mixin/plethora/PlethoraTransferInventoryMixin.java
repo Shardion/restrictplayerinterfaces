@@ -27,7 +27,7 @@ public abstract class PlethoraTransferInventoryMixin {
     private void returnNullIfRestricted(EntityPlayer object, String key, CallbackInfoReturnable<Object> cir) {
         IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(object.getServer());
         try {
-            if (!playerInterfaceManager.isInterfaceAccessAllowedForPlayer(object.getUniqueID())) {
+            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(object.getUniqueID())) {
                 cir.setReturnValue(null);
             }
         } catch (InvalidPlayerException ignored) {
@@ -46,7 +46,7 @@ public abstract class PlethoraTransferInventoryMixin {
     private void returnEmptyIfRestricted(EntityPlayer object, CallbackInfoReturnable<Set<String>> cir) {
         IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(object.getServer());
         try {
-            if (!playerInterfaceManager.isInterfaceAccessAllowedForPlayer(object.getUniqueID())) {
+            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(object.getUniqueID())) {
                 cir.setReturnValue(Collections.emptySet());
             }
         } catch (InvalidPlayerException ignored) {

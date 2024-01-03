@@ -29,7 +29,7 @@ public abstract class CompiledPlayerModuleMixin {
         EntityPlayer player = this.getPlayer();
         IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(player.getServer());
         try {
-            if (!playerInterfaceManager.isInterfaceAccessAllowedForPlayer(player.getUniqueID())) {
+            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getUniqueID())) {
                 cir.setReturnValue(false);
             }
         } catch (InvalidPlayerException ignored) {

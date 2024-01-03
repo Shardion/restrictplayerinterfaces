@@ -37,7 +37,7 @@ public class PlayerInterfaceManager implements IPlayerInterfaceManager {
 
     @SuppressWarnings("ConstantValue") // MCP annotates all methods with NotNull by default, but it's wrong here
     @Override
-    public boolean isInterfaceAccessAllowedForPlayer(UUID uuid) throws InvalidPlayerException {
+    public boolean isInterfaceAccessDisallowedForPlayer(UUID uuid) throws InvalidPlayerException {
         PlayerList players = server.getPlayerList();
         @Nullable EntityPlayerMP player = players.getPlayerByUUID(uuid);
         if (player == null) {
@@ -45,6 +45,6 @@ public class PlayerInterfaceManager implements IPlayerInterfaceManager {
         }
 
         int dimensionId = player.getEntityWorld().provider.getDimension();
-        return Arrays.stream(BadAccessConfig.disallowedDimensionIds).noneMatch((disallowedId) -> disallowedId == dimensionId);
+        return Arrays.stream(BadAccessConfig.disallowedDimensionIds).anyMatch((disallowedId) -> disallowedId == dimensionId);
     }
 }

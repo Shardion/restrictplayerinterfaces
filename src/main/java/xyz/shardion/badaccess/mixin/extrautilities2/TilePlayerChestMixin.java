@@ -27,7 +27,7 @@ public abstract class TilePlayerChestMixin {
         if (player != null) {
             IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(player.getServer());
             try {
-                if (!playerInterfaceManager.isInterfaceAccessAllowedForPlayer(player.getUniqueID())) {
+                if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getUniqueID())) {
                     cir.setReturnValue(null);
                 }
             } catch (InvalidPlayerException ignored) {

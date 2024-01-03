@@ -10,5 +10,5 @@ public interface IPlayerInterfaceManager {
      *         given entity UUID, or {@literal false} if not.
      * @throws InvalidPlayerException If there is no data for the player with the UUID specified.
      */
-    boolean isInterfaceAccessAllowedForPlayer(UUID uuid) throws InvalidPlayerException;
+    boolean isInterfaceAccessDisallowedForPlayer(UUID uuid) throws InvalidPlayerException;
 }

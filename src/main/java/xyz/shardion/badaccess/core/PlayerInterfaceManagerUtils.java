@@ -16,7 +16,7 @@ public class PlayerInterfaceManagerUtils {
     public static void throwLuaExceptionIfRestricted(EntityIdentifier.Player player) throws LuaException {
         IPlayerInterfaceManager playerInterfaceManager = getPlayerInterfaceManager(player.getPlayer().getServer());
         try {
-            if (!playerInterfaceManager.isInterfaceAccessAllowedForPlayer(player.getId())) {
+            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getId())) {
                 throw new LuaException("Player interface access is restricted");
             }
         } catch (InvalidPlayerException ignored) {
