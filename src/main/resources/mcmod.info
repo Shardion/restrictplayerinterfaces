@@ -4,6 +4,9 @@
   "name": "Restrict Player Interfaces",
   "description": "Allows restricting automated remote access to player inventories (\"player interfaces\").",
   "version": "1.0.0",
-  "mcversion": "1.12.2"
+  "mcversion": "1.12.2",
+  "dependencies": [
+    "mixinbooter"
+  ]
 }
 ]

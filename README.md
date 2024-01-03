@@ -26,6 +26,8 @@ Additionally, all inventories returned by the above methods will have no transfe
 
 ## History and other notes
 
+This mod requires [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter).
+
 This mod was made for the Meatballcraft modpack, and exists to prevent the use of player
 interfaces to transfer items to players in the Vethea dimension (from DivineRPG).
 
