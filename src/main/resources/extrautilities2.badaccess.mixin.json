@@ -1,0 +1,10 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "xyz.shardion.badaccess.mixin.extrautilities2",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "badaccess.refmap.json",
+  "mixins": [
+    "TilePlayerChestMixin"
+  ]
+}
