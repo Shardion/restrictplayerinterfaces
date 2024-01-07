@@ -9,7 +9,7 @@ import zone.rong.mixinbooter.ILateMixinLoader;
 import java.util.Arrays;
 import java.util.List;
 
-@Mod(modid = "restrictplayerinterfaces", name = "Restrict Player Interfaces", version = "1.0.0", useMetadata = true)
+@Mod(modid = "restrictplayerinterfaces", name = "Restrict Player Interfaces", version = "1.1.0", useMetadata = true)
 public class BadAccessEntrypoint implements ILateMixinLoader {
     public static Logger LOGGER = LogManager.getLogger();
 
