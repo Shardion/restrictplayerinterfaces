@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.squiddev.plethora.integration.baubles.TransferBaublesInventory;
 import xyz.shardion.badaccess.core.IPlayerInterfaceManager;
 import xyz.shardion.badaccess.core.InvalidPlayerException;
-import xyz.shardion.badaccess.core.PlayerInterfaceManagerUtils;
+import xyz.shardion.badaccess.compat.PlayerInterfaceManagerUtils;
 
 import java.util.Collections;
 import java.util.Set;
@@ -29,25 +29,6 @@ public abstract class PlethoraTransferBaublesMixin {
         try {
             if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(object.getUniqueID())) {
                 cir.setReturnValue(null);
-            }
-        } catch (InvalidPlayerException ignored) {
-        }
-    }
-
-    @Inject(
-            method = "getTransferLocations(Lnet/minecraft/entity/player/EntityPlayer;)Ljava/util/Set;",
-            at = @At(
-                    value = "HEAD",
-                    remap = false
-            ),
-            cancellable = true,
-            remap = false
-    )
-    private void returnEmptyIfRestricted(EntityPlayer object, CallbackInfoReturnable<Set<String>> cir) {
-        IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(object.getServer());
-        try {
-            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(object.getUniqueID())) {
-                cir.setReturnValue(Collections.emptySet());
             }
         } catch (InvalidPlayerException ignored) {
         }

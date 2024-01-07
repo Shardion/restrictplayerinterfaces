@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import xyz.shardion.badaccess.core.IPlayerInterfaceManager;
 import xyz.shardion.badaccess.core.InvalidPlayerException;
-import xyz.shardion.badaccess.core.PlayerInterfaceManagerUtils;
+import xyz.shardion.badaccess.compat.PlayerInterfaceManagerUtils;
 
 @Mixin(TilePlayerChest.class)
 public abstract class TilePlayerChestMixin {

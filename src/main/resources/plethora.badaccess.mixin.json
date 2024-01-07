@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "badaccess.refmap.json",
   "mixins": [
-    "PlethoraIntrospectionBaublesMixin",
-    "PlethoraIntrospectionInventoryMixin",
     "PlethoraTransferBaublesMixin",
     "PlethoraTransferInventoryMixin"
   ]

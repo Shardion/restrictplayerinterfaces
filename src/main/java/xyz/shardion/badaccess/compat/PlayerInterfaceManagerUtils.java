@@ -1,8 +1,11 @@
-package xyz.shardion.badaccess.core;
+package xyz.shardion.badaccess.compat;
 
 import dan200.computercraft.api.lua.LuaException;
 import net.minecraft.server.MinecraftServer;
 import org.squiddev.plethora.integration.EntityIdentifier;
+import xyz.shardion.badaccess.core.IPlayerInterfaceManager;
+import xyz.shardion.badaccess.core.InvalidPlayerException;
+import xyz.shardion.badaccess.core.PlayerInterfaceManager;
 
 public class PlayerInterfaceManagerUtils {
     public static IPlayerInterfaceManager getPlayerInterfaceManager(MinecraftServer server) {
@@ -12,14 +15,5 @@ public class PlayerInterfaceManagerUtils {
             playerInterfaceManager = PlayerInterfaceManager.getInstance();
         }
         return playerInterfaceManager;
-    }
-    public static void throwLuaExceptionIfRestricted(EntityIdentifier.Player player) throws LuaException {
-        IPlayerInterfaceManager playerInterfaceManager = getPlayerInterfaceManager(player.getPlayer().getServer());
-        try {
-            if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getId())) {
-                throw new LuaException("Player interface access is restricted");
-            }
-        } catch (InvalidPlayerException ignored) {
-        }
     }
 }
