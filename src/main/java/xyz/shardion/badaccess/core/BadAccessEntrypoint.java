@@ -23,7 +23,9 @@ public class BadAccessEntrypoint implements ILateMixinLoader {
         return Arrays.asList(
                 "extrautilities2.badaccess.mixin.json",
                 "modularrouters.badaccess.mixin.json",
-                "plethora.badaccess.mixin.json"
+                "plethora.badaccess.mixin.json",
+                "randomthings.badaccess.mixin.json",
+                "actuallyadditions.badaccess.mixin.json"
         );
     }
 }

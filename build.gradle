@@ -110,6 +110,8 @@ dependencies {
     implementation rfg.deobf('curse.maven:plethora-248425:2858569') // Plethora v1.2.3
     implementation rfg.deobf('curse.maven:modularrouters-250294:2954953') // Modular Routers v3.3.0
     implementation rfg.deobf('curse.maven:extrautilities2-225561:2678374') // XU2 v1.9.9
+    implementation rfg.deobf('curse.maven:actuallyadditions-228404:3117927') // Actually Additions v152
+    implementation rfg.deobf('curse.maven:randomthings-59816:2905241') // Random Things v4.2.7.4
 
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:
