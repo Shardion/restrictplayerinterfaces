@@ -17,8 +17,9 @@ The mod supports these restrictions:
 
 ## Introspection module notes
 
-All transfer locations on all inventories will point to an empty, read-only inventory if targeting the player is being
-restricted by Restrict Player Interfaces.
+If the Introspection module is targeting a player which is being restricted by Restrict Player Interfaces, all player
+inventories, such as the main inventory, Ender Chest, and Baubles, will be empty when read. Item transfers involving
+these player inventories will always transfer 0 items.
 
 ## History and other notes
 

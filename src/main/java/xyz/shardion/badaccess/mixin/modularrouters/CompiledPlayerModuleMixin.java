@@ -25,9 +25,9 @@ public abstract class CompiledPlayerModuleMixin {
             cancellable = true,
             remap = false
     )
-    private void failIfRestricted(TileEntityItemRouter router, CallbackInfoReturnable<Boolean> cir) {
+    private void returnFalseIfRestricted(TileEntityItemRouter router, CallbackInfoReturnable<Boolean> cir) {
         EntityPlayer player = this.getPlayer();
-        IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(player.getServer());
+        IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager();
         try {
             if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getUniqueID())) {
                 cir.setReturnValue(false);

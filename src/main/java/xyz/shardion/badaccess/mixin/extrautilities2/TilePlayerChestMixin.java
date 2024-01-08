@@ -22,10 +22,10 @@ public abstract class TilePlayerChestMixin {
             cancellable = true,
             remap = false
     )
-    private void noOwnerIfRestricted(CallbackInfoReturnable<EntityPlayerMP> cir) {
+    private void returnNullIfRestricted(CallbackInfoReturnable<EntityPlayerMP> cir) {
         @Nullable EntityPlayerMP player = cir.getReturnValue();
         if (player != null) {
-            IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(player.getServer());
+            IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager();
             try {
                 if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(player.getUniqueID())) {
                     cir.setReturnValue(null);

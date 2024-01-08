@@ -25,7 +25,7 @@ public abstract class TileEntityPlayerInterfaceMixin {
     private void returnNullIfRestricted(CallbackInfoReturnable<EntityPlayer> cir) {
         @Nullable EntityPlayer returnPlayer = cir.getReturnValue();
         if (returnPlayer != null) {
-            IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager(returnPlayer.getServer());
+            IPlayerInterfaceManager playerInterfaceManager = PlayerInterfaceManagerUtils.getPlayerInterfaceManager();
             try {
                 if (playerInterfaceManager.isInterfaceAccessDisallowedForPlayer(returnPlayer.getUniqueID())) {
                     cir.setReturnValue(null);
